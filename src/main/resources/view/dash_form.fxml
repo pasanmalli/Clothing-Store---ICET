@@ -10,9 +10,14 @@
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font></JFXButton>
-      <JFXButton layoutX="159.0" layoutY="161.0" onAction="#btnViewCustomerOnAction" prefHeight="25.0" prefWidth="290.0" style="-fx-background-color: blue;" text="Item Manager" textFill="#f8f6f6">
+      <JFXButton layoutX="159.0" layoutY="153.0" onAction="#btnViewCustomerOnAction" prefHeight="25.0" prefWidth="290.0" style="-fx-background-color: blue;" text="Item Manager" textFill="#f8f6f6">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font></JFXButton>
+      <JFXButton layoutX="159.0" layoutY="226.0" onAction="#btnEmployeeOnAction" prefHeight="25.0" prefWidth="290.0" style="-fx-background-color: blue;" text="Employee Manager" textFill="#f8f6f6">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
