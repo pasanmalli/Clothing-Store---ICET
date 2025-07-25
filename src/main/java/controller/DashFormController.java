@@ -49,4 +49,15 @@ public class DashFormController {
         }
 
     }
+
+    public void btnSupplierOnAction(ActionEvent actionEvent) {
+
+        try {
+            Stage stage = new Stage();
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/supplier_form.fxml"))));
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

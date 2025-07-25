@@ -19,5 +19,10 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </JFXButton>
+      <JFXButton layoutX="159.0" layoutY="300.0" onAction="#btnSupplierOnAction" prefHeight="25.0" prefWidth="290.0" style="-fx-background-color: blue;" text="Supplier Manager" textFill="#f8f6f6">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
