@@ -77,7 +77,7 @@ public class CustomerFormController implements Initializable {
 
   List<Customer> customerList = new ArrayList<>();
 
-    CustomerService service =new CustomerController();
+    CustomerService service = CustomerController.getInstance();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -140,7 +140,7 @@ public class CustomerFormController implements Initializable {
     @FXML
     void btnAddOnAction(ActionEvent event) {
         String id = txtId.getText();
-        String name = cmbTitle.getValue() + txtName.getText();
+        String name = cmbTitle.getValue() +" "+ txtName.getText();
         String address = txtAddress.getText();
         Double salary = Double.parseDouble(txtSalary.getText());
         String title = cmbTitle.getValue();
@@ -229,41 +229,7 @@ public class CustomerFormController implements Initializable {
 
     private void loadTable(){
 
-        ObservableList<Customer> customerObservableList  = FXCollections.observableArrayList();
-        try {
-
-
-            Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement psTm = connection.prepareStatement("SELECT * FROM customer");
-            ResultSet resultSet = psTm.executeQuery();
-
-            while (resultSet.next()){
-                Customer customer = new Customer(
-                        resultSet.getString("id")
-                        ,resultSet.getString("title")
-                        , resultSet.getString("name")
-                        , resultSet.getDate("dob").toLocalDate()
-                        , resultSet.getString("address")
-                        , resultSet.getDouble("salary")
-                        ,resultSet.getString("city")
-                        ,resultSet.getString("province")
-                        ,resultSet.getString("postal_code")
-
-
-                );
-
-                //System.out.println(customer);
-                customerObservableList.add(customer);
-
-            }
-
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-
-        // -----------------------------------------------------------------------
+        ObservableList<Customer> customerObservableList = service.getAllCustomers();
 
 
         customerList.forEach(customer -> {

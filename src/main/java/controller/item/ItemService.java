@@ -4,6 +4,8 @@ import javafx.collections.ObservableList;
 import model.Customer;
 import model.Item;
 
+import java.util.List;
+
 public interface ItemService {
 
     boolean addItem(Item item);
@@ -16,6 +18,7 @@ public interface ItemService {
 
     Item serchItem(String itemCode );
 
+    List<String> getAllItemCodes();
 
 
 }
